@@ -3,6 +3,8 @@ import pygame
 import os
 import math
 import random  # XD
+import asyncio # for in-browser play
+import pygame
 
 pygame.init()  # 🎊👾▶️
 pygame.mixer.init() # 🎼🎶
@@ -281,7 +283,7 @@ class CollideObstacles():  # 🌤️💥🤕
         SCREEN.blit(self.image, (self.x, self.y))  # 🎨🖼️🖌️🌤️💥🤕
 ##############################################################################################
 # 👾🧠💡 GAME START 👾🧠💡
-def main():  # 👾🧠💡
+async def main():  # 👾🧠💡
     ####################################
     ####### 🌍🌎🌏 INIT: GLOBAL VARS
     global game_speed, x_pos_bg, y_pos_bg, timePts, obstacles, treats, items, greens, allGreens, reds, obs_CollidedYet
@@ -474,6 +476,8 @@ def main():  # 👾🧠💡
 
         score() # 💯
 
+        await asyncio.sleep(0)
+
         clock.tick(30) # 🕜🔄️ fps
         pygame.display.update() # 🔄️
 ################################################################################################
@@ -533,4 +537,4 @@ def menu(death_count): # 💯💀
                     main() # restart game
 
 menu(death_count=0)
-
+asyncio.run(main())
