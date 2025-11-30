@@ -20,13 +20,13 @@ SCREEN_WIDTH = 1100
 SCREEN = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))
 #############################################################################################
 # 🎵🎶🎵🎶🎵🎶🎵🎶🎵
-themePath = os.path.join("assets/music","theme.mp3")
+themePath = os.path.join("assets/music","theme.ogg")
 pygame.mixer.music.load(themePath) # 8 bit menu - cred fesliyan STUDIOS @ # https://www.fesliyanstudios.com/royalty-free-music/downloads-c/8-bit-music/6
 pygame.mixer.music.play(-1) # should start and loop
 
-owSound = pygame.mixer.Sound("assets/music/owSound.mp3") # pixel-explosion - cred Lumora_Studios @ https://pixabay.com/users/lumora_studios-39090352/
-yaySound = pygame.mixer.Sound("assets/music/yaySound.mp3") # gameboy pluck - cred freesound_community @ https://pixabay.com/users/freesound_community-46691455
-overSound = pygame.mixer.Sound("assets/music/overSound.mp3") # 8bit game over - cred Lesiakower @ https://pixabay.com/users/lesiakower-25701529/?
+owSound = pygame.mixer.Sound("assets/music/owSound.ogg") # pixel-explosion - cred Lumora_Studios @ https://pixabay.com/users/lumora_studios-39090352/
+yaySound = pygame.mixer.Sound("assets/music/yaySound.ogg") # gameboy pluck - cred freesound_community @ https://pixabay.com/users/freesound_community-46691455
+overSound = pygame.mixer.Sound("assets/music/overSound.ogg") # 8bit game over - cred Lesiakower @ https://pixabay.com/users/lesiakower-25701529/?
 #############################################################################################
 # 🎨🖼️🖌️ ASSETS 🎨🖼️🖌️
 ###### 🩺🏥😷 ASSETS: PLAYER
@@ -40,43 +40,43 @@ DUCKING = [pygame.image.load(os.path.join("assets/player/upscaled", "duck1.png")
            pygame.image.load(os.path.join("assets/player/upscaled", "duck3.png")),
            pygame.image.load(os.path.join("assets/player/upscaled", "duck2.png"))]  # ⬇️⬇️
 ###### 🤕❤️ || 🎁💚 ASSETS: OBSTACLES/TREATS
-LAND_OBSTACLES = [pygame.image.load(os.path.join("assets/items/reds/upscaled", "ObstacleLarge1.png")),
-                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "ObstacleLarge2.png")),
-                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "ObstacleLarge3.png")),
-                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "ObstacleSmall1.png")),
-                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "ObstacleSmall2.png")),
-                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "ObstacleSmall3.png"))]  # ⛰️💥🤕
-AIR_OBSTACLES = [pygame.image.load(os.path.join("assets/items/reds/upscaled", "ObstacleSmall1.png")),
-                 pygame.image.load(os.path.join("assets/items/reds/upscaled", "ObstacleSmall2.png")),
-                 pygame.image.load(os.path.join("assets/items/reds/upscaled", "ObstacleSmall3.png"))]  # 🌤️💥🤕
-AIR_TREATS = [pygame.image.load(os.path.join("assets/items/greens/upscaled", "TreatSmall1.png")),
-              pygame.image.load(os.path.join("assets/items/greens/upscaled", "TreatSmall2.png")),
-              pygame.image.load(os.path.join("assets/items/greens/upscaled", "TreatSmall3.png"))]  # 🌤️🎁🍴
-LAND_TREATS = [pygame.image.load(os.path.join("assets/items/greens/upscaled", "TreatLarge1.png")),
-               pygame.image.load(os.path.join("assets/items/greens/upscaled", "TreatLarge2.png")),
-               pygame.image.load(os.path.join("assets/items/greens/upscaled", "TreatLarge3.png")),
-               pygame.image.load(os.path.join("assets/items/greens/upscaled", "TreatSmall1.png")),
-               pygame.image.load(os.path.join("assets/items/greens/upscaled", "TreatSmall2.png")),
-               pygame.image.load(os.path.join("assets/items/greens/upscaled", "TreatSmall3.png"))]  # ⛰️🎁🍴
+LAND_OBSTACLES = [pygame.image.load(os.path.join("assets/items/reds/upscaled", "obstacleLarge1.png")),
+                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "obstacleLarge2.png")),
+                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "obstacleLarge3.png")),
+                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "obstacleSmall1.png")),
+                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "obstacleSmall2.png")),
+                  pygame.image.load(os.path.join("assets/items/reds/upscaled", "obstacleSmall3.png"))]  # ⛰️💥🤕
+AIR_OBSTACLES = [pygame.image.load(os.path.join("assets/items/reds/upscaled", "obstacleSmall1.png")),
+                 pygame.image.load(os.path.join("assets/items/reds/upscaled", "obstacleSmall2.png")),
+                 pygame.image.load(os.path.join("assets/items/reds/upscaled", "obstacleSmall3.png"))]  # 🌤️💥🤕
+AIR_TREATS = [pygame.image.load(os.path.join("assets/items/greens/upscaled", "treatSmall1.png")),
+              pygame.image.load(os.path.join("assets/items/greens/upscaled", "treatSmall2.png")),
+              pygame.image.load(os.path.join("assets/items/greens/upscaled", "treatSmall3.png"))]  # 🌤️🎁🍴
+LAND_TREATS = [pygame.image.load(os.path.join("assets/items/greens/upscaled", "treatLarge1.png")),
+               pygame.image.load(os.path.join("assets/items/greens/upscaled", "treatLarge2.png")),
+               pygame.image.load(os.path.join("assets/items/greens/upscaled", "treatLarge3.png")),
+               pygame.image.load(os.path.join("assets/items/greens/upscaled", "treatSmall1.png")),
+               pygame.image.load(os.path.join("assets/items/greens/upscaled", "treatSmall2.png")),
+               pygame.image.load(os.path.join("assets/items/greens/upscaled", "treatSmall3.png"))]  # ⛰️🎁🍴
 ###### 🚦🤎 ASSETS: COLORBLIND VERS
-COLORBLIND_LAND_OBSTACLES = [pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "ObstacleLarge1.png")),
-                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "ObstacleLarge2.png")),
-                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "ObstacleLarge3.png")),
-                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "ObstacleSmall1.png")),
-                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "ObstacleSmall2.png")),
-                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "ObstacleSmall3.png"))]  # ⛰️💥🤕
-COLORBLIND_AIR_OBSTACLES = [pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "ObstacleSmall1.png")),
-                 pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "ObstacleSmall2.png")),
-                 pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "ObstacleSmall3.png"))]  # 🌤️💥🤕
-COLORBLIND_AIR_TREATS = [pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "TreatSmall1.png")),
-              pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "TreatSmall2.png")),
-              pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "TreatSmall3.png"))]  # 🌤️🎁🍴
-COLORBLIND_LAND_TREATS = [pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "TreatLarge1.png")),
-               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "TreatLarge2.png")),
-               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "TreatLarge3.png")),
-               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "TreatSmall1.png")),
-               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "TreatSmall2.png")),
-               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "TreatSmall3.png"))]  # ⛰️🎁🍴
+COLORBLIND_LAND_OBSTACLES = [pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "obstacleLarge1.png")),
+                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "obstacleLarge2.png")),
+                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "obstacleLarge3.png")),
+                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "obstacleSmall1.png")),
+                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "obstacleSmall2.png")),
+                  pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "obstacleSmall3.png"))]  # ⛰️💥🤕
+COLORBLIND_AIR_OBSTACLES = [pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "obstacleSmall1.png")),
+                 pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "obstacleSmall2.png")),
+                 pygame.image.load(os.path.join("assets/items/colorblind-reds/upscaled", "obstacleSmall3.png"))]  # 🌤️💥🤕
+COLORBLIND_AIR_TREATS = [pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "treatSmall1.png")),
+              pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "treatSmall2.png")),
+              pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "treatSmall3.png"))]  # 🌤️🎁🍴
+COLORBLIND_LAND_TREATS = [pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "treatLarge1.png")),
+               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "treatLarge2.png")),
+               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "treatLarge3.png")),
+               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "treatSmall1.png")),
+               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "treatSmall2.png")),
+               pygame.image.load(os.path.join("assets/items/colorblind-greens/upscaled", "treatSmall3.png"))]  # ⛰️🎁🍴
 ###### 💥‼️ ASSETS: COLLIDE
 COLLIDE_TREAT = pygame.image.load(os.path.join("assets/react", "yay.png")) # 💥🎁
 COLLIDE_OBSTACLE = pygame.image.load(os.path.join("assets/react", "ow.png")) # 💥🤕

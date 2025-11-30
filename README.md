@@ -35,7 +35,7 @@ simple infinite runner type game! basically the same as the "offline chrome brow
 - colorblindness happens when the opsin proteins on the X chromosome have genetic mutations (X-linked inheritance!)
 - i am not colorblind! but my friend is... i feel awful when i forget every autumn & try to point out red leaves i think are pretty... sorry buddy... anyway, he started trying to explain to me how HE sees thinks and how he can differentiate based on some contexts. which made me curious and gave me gamey-makey ideas!
 
-## 💾 hao 2 dl & play (leetle effort)
+## 💾 hao 2 dl & play (leetle effort w Python 3.13.5)
 1. clone this repo 
 2. in the terminal, navigate to the directory where the repo was cloned, ex: `C:\Users\MyName\PycharmProjects\oopsinGame`
 3. create a virtual environment, activate it, & install pygame by running the following commands in the terminal:
