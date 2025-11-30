@@ -3,7 +3,6 @@ import pygame
 import os
 import math
 import random  # XD
-import asyncio # for in-browser play
 import pygame
 
 pygame.init()  # 🎊👾▶️
@@ -283,7 +282,7 @@ class CollideObstacles():  # 🌤️💥🤕
         SCREEN.blit(self.image, (self.x, self.y))  # 🎨🖼️🖌️🌤️💥🤕
 ##############################################################################################
 # 👾🧠💡 GAME START 👾🧠💡
-async def main():  # 👾🧠💡
+def main():  # 👾🧠💡
     ####################################
     ####### 🌍🌎🌏 INIT: GLOBAL VARS
     global game_speed, x_pos_bg, y_pos_bg, timePts, obstacles, treats, items, greens, allGreens, reds, obs_CollidedYet
@@ -322,7 +321,7 @@ async def main():  # 👾🧠💡
 
     ###### INIT: FONT ✍️🔠
     fontSmol = pygame.font.Font('PKMN_RBYGSC.ttf', 15) # ✍️🦐
-    fontTol = pygame.font.Font('PKMN_RBYGSC.ttf', 80) # ✍️🐳
+    fontTol = pygame.font.Font('PKMN_RBYGSC.ttf', 120) # ✍️🐳
 
     ####################################
     def score():
@@ -433,22 +432,6 @@ async def main():  # 👾🧠💡
             ############## CASE 2 -- logic knows collide is happening 🧠💥✅
             elif player.player_rect.colliderect(obstacle.rect) and collidingObstacle:
                 collideObstacles.draw(SCREEN) # 🤕🖌️📺
-                if reds == 3: # 3️⃣❤️💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀
-                    textA = fontTol.render("GAME", True, (0, 0, 0))  # ✍️🔠
-                    textRectA = textA.get_rect()
-                    textRectA.center = (SCREEN_WIDTH - 450, SCREEN_HEIGHT - 500)
-                    SCREEN.blit(textA, textRectA)  # ✍️📺
-
-                    textB = fontTol.render("OVER", True, (0, 0, 0))  # ✍️🔠
-                    textRectB = textB.get_rect()
-                    textRectB.center = (SCREEN_WIDTH - 450, SCREEN_HEIGHT - 400)
-                    SCREEN.blit(textB, textRectB)  # ✍️📺
-
-                    overSound.play() # 🎵💀
-
-                    pygame.display.update() # 🔄️ update screen
-                    pygame.time.delay(3000) # 🕐⏯️
-                    menu(death_count) # 💯💀🔄️🔰✨
             ############## CASE 3 -- logic thinks collide is happening, but it's done 🧠💥❌
             elif not player.player_rect.colliderect(obstacle.rect) and collidingObstacle:
                 collidingObstacle = False # 💥❌
@@ -476,10 +459,25 @@ async def main():  # 👾🧠💡
 
         score() # 💯
 
-        await asyncio.sleep(0)
-
         clock.tick(30) # 🕜🔄️ fps
         pygame.display.update() # 🔄️
+
+        if reds == 3:  # 3️⃣❤️💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀💀
+            textA = fontTol.render("GAME", True, (0, 0, 0))  # ✍️🔠
+            textRectA = textA.get_rect()
+            textRectA.center = (SCREEN_WIDTH - 400, SCREEN_HEIGHT - 400)
+            SCREEN.blit(textA, textRectA)  # ✍️📺
+
+            textB = fontTol.render("OVER", True, (0, 0, 0))  # ✍️🔠
+            textRectB = textB.get_rect()
+            textRectB.center = (SCREEN_WIDTH - 400, SCREEN_HEIGHT - 250)
+            SCREEN.blit(textB, textRectB)  # ✍️📺
+
+            overSound.play()  # 🎵💀
+
+            pygame.display.update()  # 🔄️ update screen
+            pygame.time.delay(3000)  # 🕐⏯️
+            menu(death_count)  # 💯💀🔄️🔰✨
 ################################################################################################
 def menu(death_count): # 💯💀
     global timePts # 🌍💯🕐
@@ -494,17 +492,17 @@ def menu(death_count): # 💯💀
 
         text = fontTol.render("Press Any Key to Play Again", True, (0, 0, 0)) # ✍️🔠
         textRect = text.get_rect()
-        textRect.center = (SCREEN_WIDTH - 550, SCREEN_HEIGHT - 210)
+        textRect.center = (SCREEN_WIDTH - 550, SCREEN_HEIGHT - 240)
         SCREEN.blit(text, textRect)
 
         textB = fontTol.render("Press ESC to Quit", True, (0, 0, 0)) # ✍️🔠
         textRectB = textB.get_rect()
-        textRectB.center = (SCREEN_WIDTH - 550, SCREEN_HEIGHT - 170)
+        textRectB.center = (SCREEN_WIDTH - 550, SCREEN_HEIGHT - 200)
         SCREEN.blit(textB, textRectB)
 
         textA = fontTol.render("A Color UNfriendly Game", True, (0, 0, 0)) # ✍️🔠
         textRectA = textA.get_rect()
-        textRectA.center = (SCREEN_WIDTH - 550, SCREEN_HEIGHT - 130)
+        textRectA.center = (SCREEN_WIDTH - 550, SCREEN_HEIGHT - 160)
         SCREEN.blit(textA, textRectA)
         # 💀🖼️🖌️💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯💯
         if death_count > 0: # is there a past score to report?
@@ -523,18 +521,21 @@ def menu(death_count): # 💯💀
             scoreRect = score.get_rect()
             scoreRect.center = (SCREEN_WIDTH - 550, SCREEN_HEIGHT - 60)
             SCREEN.blit(score, scoreRect) # ✍️📺
-
+            # 💯💯💯💯💯💯💯💯💯💯💯💯💯💯⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩⏩
+            score = fontSmol.render("Max Speed: " + str(game_speed), True, (0, 0, 0)) # ✍️🔠
+            scoreRect = score.get_rect()
+            scoreRect.center = (SCREEN_WIDTH - 550, SCREEN_HEIGHT - 90)
+            SCREEN.blit(score, scoreRect) # ✍️📺
         pygame.display.update()  # 🖼️🔄️
 
         for event in pygame.event.get(): # 🔄
             if event.type == pygame.QUIT: # 🙅🏳️ safe quit
                 run = False # ⏸️
             if event.type == pygame.KEYDOWN: # 🎮 if any key
-                if event.key == pygame.K_ESCAPE:  # 🚨 if hit escape
+                if event.key == pygame.K_ESCAPE:  # 🚨 escape-key only:
                     run = False # ⏸️
                     pygame.quit()  # 🙅🏳️ will trigger during next pygame.event.get()
-                else:
-                    main() # restart game
+                else: # any key other than esc
+                    main() # 🔄🎮
 
 menu(death_count=0)
-asyncio.run(main())
